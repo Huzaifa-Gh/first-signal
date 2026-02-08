@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ── Warm theme (default) ── */
+:root {
+  --val-bg: #fdf6f0;
+  --val-bg-muted: #f9ede3;
+  --val-surface: #ffffff;
+  --val-primary: #1e2a3a;
+  --val-primary-soft: #2d3d50;
+  --val-secondary: #6b7280;
+  --val-dimmed: #9ca3af;
+  --val-accent: #e07a5f;
+  --val-accent-hover: #c9694f;
+  --val-accent-light: #fde8e0;
+  --val-success: #4a7c6f;
+  --val-success-light: #e8f0ed;
+  --val-warning: #d97706;
+  --val-warning-light: #fffbeb;
+  --val-danger: #dc2626;
+  --val-danger-light: #fef2f2;
+  --val-edge: #e5e7eb;
+  --val-edge-soft: #f3f4f6;
+  --val-selection: rgba(224, 122, 95, 0.2);
+}
+
+/* ── Dark mode ── */
+.theme-ocean.dark {
+  --val-bg: #0f172a;
+  --val-bg-muted: #1e293b;
+  --val-surface: #1e293b;
+  --val-primary: #f1f5f9;
+  --val-primary-soft: #cbd5e1;
+  --val-secondary: #94a3b8;
+  --val-dimmed: #475569;
+  --val-accent: #3b82f6;
+  --val-accent-hover: #60a5fa;
+  --val-accent-light: rgba(59, 130, 246, 0.15);
+  --val-success: #2dd4bf;
+  --val-success-light: rgba(45, 212, 191, 0.15);
+  --val-warning: #fb923c;
+  --val-warning-light: rgba(251, 146, 60, 0.15);
+  --val-danger: #f87171;
+  --val-danger-light: rgba(248, 113, 113, 0.15);
+  --val-edge: #334155;
+  --val-edge-soft: #1e293b;
+  --val-selection: rgba(59, 130, 246, 0.25);
+}
+
+@theme {
+  --color-bg: var(--val-bg);
+  --color-bg-muted: var(--val-bg-muted);
+  --color-surface: var(--val-surface);
+  --color-primary: var(--val-primary);
+  --color-primary-soft: var(--val-primary-soft);
+  --color-secondary: var(--val-secondary);
+  --color-dimmed: var(--val-dimmed);
+  --color-accent: var(--val-accent);
+  --color-accent-hover: var(--val-accent-hover);
+  --color-accent-light: var(--val-accent-light);
+  --color-success: var(--val-success);
+  --color-success-light: var(--val-success-light);
+  --color-warning: var(--val-warning);
+  --color-warning-light: var(--val-warning-light);
+  --color-danger: var(--val-danger);
+  --color-danger-light: var(--val-danger-light);
+  --color-edge: var(--val-edge);
+  --color-edge-soft: var(--val-edge-soft);
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@utility animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--val-bg);
+  color: var(--val-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--val-selection);
+  color: var(--val-primary);
+}
